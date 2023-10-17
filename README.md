@@ -1,8 +1,4 @@
-# React + Vite
+# Entregable 4: USER APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este es el entregable de la CUARTA semana del modulo de React en Academlo
+Consiste en una interface grafica para manejar una API haciendo el ciclo del CRUD
