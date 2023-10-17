@@ -12,6 +12,7 @@ const Modal = ({
 }) => {
   return (
     <section
+    // to change the size of the modal and form remember always  flex justify-center items-center
       className={`fixed top-0 bottom-0 left-0 right-0 bg-black/30 flex justify-center items-center px-3 transition-all duration-200 ${
         isShowModal ? "visible opacity-100" : "invisible opacity-0"
       }`}

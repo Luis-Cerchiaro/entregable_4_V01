@@ -83,7 +83,7 @@ console.log(errors)
   }, []);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[url('/backgroundApp.jpg')] bg-cover">
       <Header handleOpenModal={handleOpenModal} />
       <Modal
         isShowModal={isShowModal}
