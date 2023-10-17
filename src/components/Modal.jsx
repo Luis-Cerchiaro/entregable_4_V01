@@ -8,7 +8,7 @@ const Modal = ({
   register,
   submit,
   idUserToEdit,
-  errors
+  errors,
 }) => {
   return (
     <section
@@ -39,11 +39,22 @@ const Modal = ({
             id="first_name"
             name="first_name"
             type="text"
-            {...register("first_name", {required: {
-              value: true,
-            message: "First Name is obligatory"}})}
+            {...register("first_name", {
+              required: {
+                value: true,
+                message: "First Name is obligatory",
+              },
+              maxLength: {
+                value: 25,
+                message: "Maximum 25 chracters",
+              },
+            })}
           />
-          {errors.first_name && <span className="text-red-500 text-xs">{errors.first_name.message}</span> }
+          {errors.first_name && (
+            <span className="text-red-500 text-xs">
+              {errors.first_name.message}
+            </span>
+          )}
         </div>
         <div className="grid gap-2">
           <label className="font-light" htmlFor="last_name">
@@ -54,11 +65,22 @@ const Modal = ({
             id="last_name"
             name="last_name"
             type="text"
-            {...register("last_name", {required: {
-              value: true,
-            message: "Last Name is obligatory"}})}
+            {...register("last_name", {
+              required: {
+                value: true,
+                message: "Last Name is obligatory",
+              },
+              maxLength: {
+                value: 25,
+                message: "Maximum 25 chracters",
+              },
+            })}
           />
-          {errors.last_name && <span className="text-red-500 text-xs">{errors.last_name.message}</span> }
+          {errors.last_name && (
+            <span className="text-red-500 text-xs">
+              {errors.last_name.message}
+            </span>
+          )}
         </div>
         <div className="grid gap-2">
           <label className="font-light" htmlFor="email">
@@ -69,11 +91,25 @@ const Modal = ({
             id="email"
             name="email"
             type="text"
-            {...register("email", {required: {
-              value: true,
-            message: "Email is obligatory"}})}
+            {...register("email", {
+              required: {
+                value: true,
+                message: "Email is obligatory",
+              },
+              maxLength: {
+                value: 150,
+                message: "Maximum 150 chracters",
+              },
+              pattern: {
+                value:
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                message: "It is not a valid email format",
+              },
+            })}
           />
-           {errors.email && <span className="text-red-500 text-xs">{errors.email.message}</span> }
+          {errors.email && (
+            <span className="text-red-500 text-xs">{errors.email.message}</span>
+          )}
         </div>
         <div className="grid gap-2">
           <label className="font-light" htmlFor="password">
@@ -83,12 +119,23 @@ const Modal = ({
             className=" outline-none border px-2 py-1 rounded-sm"
             id="password"
             name="password"
-            type="text"
-            {...register("password", {required: {
-              value: true,
-            message: "Password is obligatory"}})}
+            type="password"
+            {...register("password", {
+              required: {
+                value: true,
+                message: "Password is obligatory",
+              },
+              maxLength: {
+                value: 25,
+                message: "Maximum 25 chracters",
+              },
+            })}
           />
-          {errors.password && <span className="text-red-500 text-xs">{errors.password.message}</span> }
+          {errors.password && (
+            <span className="text-red-500 text-xs">
+              {errors.password.message}
+            </span>
+          )}
         </div>
         <div className="grid gap-2">
           <label className="font-light" htmlFor="birthday">
